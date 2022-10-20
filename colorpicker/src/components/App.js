@@ -86,7 +86,7 @@ class App extends React.Component {
     if (!Array.isArray(this.state.color)) return false;
 
     const rgb = this.state.color;
-    console.log(rgb.reduce((a, b) => a + b) < 127 * 3);
+    rgb.reduce((a, b) => a + b) < 127 * 3;
     return rgb.reduce((a, b) => a + b) < 127 * 3;
   }
 
@@ -107,10 +107,14 @@ class App extends React.Component {
         <h1 className={this.isLight() ? "white" : "black"}>
           Current color is {this.formatColor(this.state.color)}
         </h1>
-        <Button handleClick={this.handleClick} />
+        <Button handleClick={this.handleClick} light={this.isLight()} />
         <div style={{ marginTop: 32 }}>
           {colorNames.map((color) => (
-            <Button color={color} handleClick={this.handleClick} />
+            <Button
+              color={color}
+              handleClick={this.handleClick}
+              light={this.isLight()}
+            />
           ))}
         </div>
       </div>
