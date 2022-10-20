@@ -2,11 +2,12 @@
   "name": "",
   "version": "0.0.0",
   "description": "",
-  "main": "src/App.js",
   "scripts": {
     "dev": "parcel src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "build": "parcel build src/index.html --public-url ./",
+    "create-gh-pages": "git branch gh-pages -f && git push origin gh-pages -f && gh-pages -d dist && gh repo view -w"
   },
   "author": "",
   "license": "Apache-2.0",
@@ -14,6 +15,7 @@
     "@parcel/transformer-sass": "^2.7.0",
     "eslint": "8.8.0",
     "eslint-config-prettier": "8.3.0",
+    "gh-pages": "^4.0.0",
     "parcel": "2.2.1",
     "prettier": "2.5.1",
     "process": "^0.11.10"
