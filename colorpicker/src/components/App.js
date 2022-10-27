@@ -6,8 +6,8 @@ import Button from "./Button";
 // Clicking one of the predefined color buttons will set the background to that color
 
 // Components
-// App - handles the logic and passes down the `handleClick` function and the color attribute as a prop to the button component
-// The app's job is to store a color, and to use that color to update the screen’s background.
+// App - handles the logic and passes down the `handleClick` function and the color state as a prop to the button component
+// The app's job is to store a color, and whenever the color state is changed update the screen’s background to the color stored in the state.
 // App has a color state. The state can be changed by clicking one of the buttons which calls the `handleClick` function and sets the color state to a new color.
 // Evertime the state is changed the `ComponentDidUpdate` lifecycle method is called and sets the background to the current value in the state by calling `applyColor`.
 
